@@ -50,7 +50,7 @@
 
             <Button
                 android:id="@+id/addTelBt"
-                android:layout_width="142dp"
+                android:layout_width="114dp"
                 android:layout_height="46dp"
                 android:layout_margin="2dp"
                 android:onClick="onClick"
@@ -68,7 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Telefone"
+                android:hint="Segundo Telefone"
                 android:inputType="phone" />
         </LinearLayout>
 

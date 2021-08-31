@@ -12,6 +12,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private EditText nomeEt;
@@ -72,6 +73,46 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
+        StringBuilder sb = new StringBuilder();
+        sb.append(nomeEt.getText().toString());
+        sb.append("\n");
+        sb.append(emailEt.getText().toString());
+        sb.append("\n");
+        sb.append(telEt.getText().toString());
+        sb.append("\n");
+        sb.append(pessoal.isChecked() ? "Tel pessoal" : "Tel comercial");
+        sb.append("\n");
+        sb.append(vagas.getText().toString());
+        sb.append("\n");
+        sb.append(dataNasc.getText().toString());
+        sb.append("\n");
+        sb.append(emailCk.isChecked() ? "Receber e-mails" : "não receber e-mails");
+        sb.append("\n");
+        sb.append(masc.isChecked() ? "Masculino" : "Feminino");
+        sb.append("\n");
+        sb.append(((TextView) formSp.getSelectedView()).getText());
+        sb.append("\n");
+
+        if(view.getId() == R.id.salvarBt){
+            Toast.makeText(this, sb.toString() , Toast.LENGTH_LONG).show();
+        }
+        if(view.getId() == R.id.limparBt){
+            Toast.makeText(this,"Limpando", Toast.LENGTH_SHORT).show();
+            limparCampos();
+        }
+        if(view.getId() == R.id.addTelBt){
+            maisTel.setVisibility(View.VISIBLE);
+        }
+
+
+    }
+
+    private void limparCampos() {
+        nomeEt.setText("");
+        emailEt.setText("");
+        telEt.setText("");
+        vagas.setText("");
+        dataNasc.setText("");
 
     }
 
